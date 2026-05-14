@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # Backend API service
+  backend:
+    build: .
+    container_name: arp-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./arp_assessment.db
+      - DB_PATH=./data/arp_assessment.db
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_DEBUG=false
+      - LLM_TYPE=mock
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - SECRET_KEY=${SECRET_KEY:-dev-secret-key}
+      - ENVIRONMENT=development
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - arp-network
+    command: python -m src.backend.app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Dashboard service
+  dashboard:
+    build: .
+    container_name: arp-dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=true
+      - API_HOST=backend
+      - API_PORT=8000
+    volumes:
+      - ./data:/app/data
+    networks:
+      - arp-network
+    depends_on:
+      - backend
+    command: streamlit run src/dashboard/app.py --server.port=8501 --server.headless=true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Optional: Ollama service for LLM (uncomment to enable)
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: arp-ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama-data:/root/.ollama
+  #   networks:
+  #     - arp-network
+  #   environment:
+  #     - OLLAMA_HOST=0.0.0.0:11434
+
+networks:
+  arp-network:
+    driver: bridge
+
+# volumes:
+#   ollama-data:
