@@ -197,31 +197,12 @@ def page_portfolio():
                     height=400,
                 )
                 st.plotly_chart(fig, use_container_width=True)
-            
-            if exposures:
-                # Pie chart of asset allocation
-                col1, col2 = st.columns(2)
                 
-                with col1:
-                    asset_classes = {}
-                    for e in exposures:
-                        asset_class = e['asset_class']
-                        if asset_class not in asset_classes:
-                            asset_classes[asset_class] = 0
-                        asset_classes[asset_class] += e['position_value']
-                    
-                    fig = go.Figure(data=[go.Pie(
-                        labels=list(asset_classes.keys()),
-                        values=list(asset_classes.values()),
-                    )])
-                    fig.update_layout(title="Asset Class Distribution", height=400)
-                    st.plotly_chart(fig, use_container_width=True)
-                
-                with col2:
-                    st.subheader("Holdings Details")
-                    df_display = df[['symbol', 'quantity', 'current_price', 'position_value', 'exposure_percentage']].copy()
-                    df_display.columns = ['Symbol', 'Quantity', 'Price', 'Value', 'Exposure %']
-                    st.dataframe(df_display, use_container_width=True, hide_index=True)
+                # Holdings table
+                st.subheader("Holdings Details")
+                df_display = df[['symbol', 'quantity', 'current_price', 'position_value', 'exposure_percentage']].copy()
+                df_display.columns = ['Symbol', 'Quantity', 'Price', 'Value', 'Exposure %']
+                st.dataframe(df_display, use_container_width=True, hide_index=True)
                 
                 # Overexposed assets
                 overexposed = data.get("overexposed_assets", [])
@@ -231,6 +212,13 @@ def page_portfolio():
                         st.write(f"- **{asset['symbol']}**: {asset['exposure_percentage']:.1f}%")
             else:
                 st.info("Summary access only. Detailed holdings are not available for this role.")
+                st.write("**Available summary information:**")
+                st.write(f"- Total portfolio value: ${total_value:,.2f}")
+                st.write(f"- Number of holdings: {data.get('holdings_count', 'N/A')}")
+                if allocation:
+                    st.write("**Asset allocation:**")
+                    for asset_class, percentage in allocation.items():
+                        st.write(f"- {asset_class}: {percentage}%")
         
         else:
             st.error(f"Failed to fetch portfolio data: {response.status_code}")
@@ -274,11 +262,16 @@ def page_trades():
                         return 'background-color: #ffffcc'
                     return ''
                 
-                st.dataframe(
-                    df.style.applymap(highlight_risk, subset=['risk_score']) if 'risk_score' in df.columns else df,
-                    use_container_width=True,
-                    hide_index=True,
-                )
+                if 'risk_score' in df.columns:
+                    try:
+                        # pandas >= 2.1.0 uses map
+                        styled_df = df.style.map(highlight_risk, subset=['risk_score'])
+                    except AttributeError:
+                        # older pandas uses applymap
+                        styled_df = df.style.applymap(highlight_risk, subset=['risk_score'])
+                    st.dataframe(styled_df, use_container_width=True, hide_index=True)
+                else:
+                    st.dataframe(df, use_container_width=True, hide_index=True)
             else:
                 st.info("No trades in the last 7 days")
         

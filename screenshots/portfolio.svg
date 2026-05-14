@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <rect width="800" height="500" fill="#0f172a"/>
+  <text x="400" y="80" fill="#f8fafc" font-size="38" font-family="Arial" text-anchor="middle">Portfolio Page</text>
+  <rect x="70" y="130" width="660" height="130" rx="16" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <text x="120" y="180" fill="#cbd5e1" font-size="18" font-family="Arial">Total Portfolio Value</text>
+  <text x="120" y="220" fill="#f8fafc" font-size="24" font-family="Arial">$1,250,000</text>
+  <rect x="70" y="290" width="320" height="130" rx="16" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <rect x="410" y="290" width="320" height="130" rx="16" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <text x="230" y="340" fill="#cbd5e1" font-size="18" font-family="Arial">Exposure</text>
+  <text x="590" y="340" fill="#cbd5e1" font-size="18" font-family="Arial">Allocation</text>
+</svg>

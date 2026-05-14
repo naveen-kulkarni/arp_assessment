@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <rect width="800" height="500" fill="#1f2937"/>
+  <rect x="50" y="40" width="700" height="420" rx="24" fill="#111827" stroke="#4b5563" stroke-width="2"/>
+  <text x="400" y="150" fill="#ffffff" font-size="42" font-family="Arial" text-anchor="middle">Login Screen</text>
+  <text x="400" y="230" fill="#9ca3af" font-size="24" font-family="Arial" text-anchor="middle">Select a user and click Login</text>
+  <text x="400" y="310" fill="#9ca3af" font-size="20" font-family="Arial" text-anchor="middle">Roles: analyst, risk, manager, intern</text>
+</svg>

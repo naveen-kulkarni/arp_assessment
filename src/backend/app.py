@@ -5,12 +5,17 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 from datetime import timedelta
 from sqlalchemy.exc import SQLAlchemyError
 import json
+import sys
+import os
 
-from .config import get_settings
-from .database import init_db, SessionLocal, get_db
-from .models import User, UserRole, AuditLog
-from .security import create_access_token as create_jwt_token, verify_token
-from .data_generator import generate_mock_data, clear_mock_data
+# Add src to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
+
+from src.backend.config import get_settings
+from src.backend.database import init_db, SessionLocal, get_db
+from src.backend.models import User, UserRole, AuditLog
+from src.backend.security import create_access_token as create_jwt_token, verify_token
+from src.backend.data_generator import generate_mock_data, clear_mock_data
 from src.agents.orchestrator import AgentOrchestrator
 
 settings = get_settings()
@@ -54,6 +59,10 @@ def login():
     db = SessionLocal()
     try:
         user = db.query(User).filter(User.username == username).first()
+        
+        print(f"LOGIN: User {username}, found: {user is not None}")
+        if user:
+            print(f"LOGIN: Role {user.role}")
         
         if not user:
             return jsonify({"error": "User not found"}), 404
@@ -171,6 +180,10 @@ def get_portfolio():
         orchestrator = AgentOrchestrator(db)
         from src.backend.tools import ToolContext, get_asset_exposure, get_portfolio_summary
         context = ToolContext(db, user)
+        
+        print(f"DEBUG: User {user.username}, Role {user.role}")
+        print(f"DEBUG: check_access('get_asset_exposure'): {context.check_access('get_asset_exposure')}")
+        print(f"DEBUG: check_access('get_portfolio_summary'): {context.check_access('get_portfolio_summary')}")
         
         if context.check_access("get_asset_exposure"):
             result = get_asset_exposure(context)

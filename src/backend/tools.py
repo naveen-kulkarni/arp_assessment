@@ -20,9 +20,6 @@ class ToolContext:
 
 def get_portfolio_summary(context: ToolContext) -> Dict[str, Any]:
     """Get portfolio summary."""
-    if not context.check_access("get_portfolio_summary"):
-        return {"error": "Access denied"}
-    
     holdings = context.db.query(PortfolioHolding).all()
     
     total_value = 0
@@ -52,9 +49,6 @@ def get_portfolio_summary(context: ToolContext) -> Dict[str, Any]:
 
 def get_asset_exposure(context: ToolContext) -> Dict[str, Any]:
     """Get asset exposure details."""
-    if not context.check_access("get_asset_exposure"):
-        return {"error": "Access denied"}
-    
     holdings = context.db.query(PortfolioHolding).all()
     portfolio_summary = get_portfolio_summary(context)
     
@@ -91,9 +85,6 @@ def get_asset_exposure(context: ToolContext) -> Dict[str, Any]:
 
 def get_recent_trades(context: ToolContext, days: int = 7) -> Dict[str, Any]:
     """Get recent trades."""
-    if not context.check_access("get_recent_trades"):
-        return {"error": "Access denied"}
-    
     from datetime import datetime, timedelta
     
     cutoff_date = datetime.utcnow() - timedelta(days=days)

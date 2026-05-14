@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <rect width="800" height="500" fill="#111827"/>
+  <text x="400" y="80" fill="#f8fafc" font-size="36" font-family="Arial" text-anchor="middle">Trades Page</text>
+  <rect x="80" y="130" width="640" height="80" rx="16" fill="#1f2937" stroke="#334155" stroke-width="2"/>
+  <rect x="80" y="230" width="640" height="80" rx="16" fill="#1f2937" stroke="#334155" stroke-width="2"/>
+  <text x="220" y="170" fill="#f8fafc" font-size="18" font-family="Arial">Trade</text>
+  <text x="420" y="170" fill="#f8fafc" font-size="18" font-family="Arial">Type</text>
+  <text x="600" y="170" fill="#f8fafc" font-size="18" font-family="Arial">Risk</text>
+  <text x="220" y="270" fill="#d1d5db" font-size="16" font-family="Arial">AAPL</text>
+  <text x="420" y="270" fill="#d1d5db" font-size="16" font-family="Arial">Buy</text>
+  <text x="600" y="270" fill="#f87171" font-size="16" font-family="Arial">82</text>
+</svg>

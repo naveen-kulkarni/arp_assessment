@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <rect width="800" height="500" fill="#111827"/>
+  <text x="400" y="80" fill="#f8fafc" font-size="36" font-family="Arial" text-anchor="middle">AI Agent Page</text>
+  <rect x="60" y="130" width="680" height="80" rx="16" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+  <text x="100" y="175" fill="#d1d5db" font-size="18" font-family="Arial">User Question:</text>
+  <text x="100" y="205" fill="#f8fafc" font-size="16" font-family="Arial">What are our top holdings?</text>
+  <rect x="60" y="240" width="680" height="180" rx="16" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+  <text x="100" y="290" fill="#cbd5e1" font-size="18" font-family="Arial">AI Response</text>
+  <text x="100" y="330" fill="#f8fafc" font-size="16" font-family="Arial">Our top holdings are AAPL, MSFT, and TSLA.</text>
+</svg>

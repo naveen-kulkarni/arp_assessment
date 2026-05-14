@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <rect width="800" height="500" fill="#0f172a"/>
+  <text x="400" y="80" fill="#f8fafc" font-size="36" font-family="Arial" text-anchor="middle">Audit Logs Page</text>
+  <rect x="80" y="130" width="640" height="100" rx="16" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <text x="120" y="175" fill="#cbd5e1" font-size="18" font-family="Arial">Timestamp</text>
+  <text x="320" y="175" fill="#cbd5e1" font-size="18" font-family="Arial">User</text>
+  <text x="520" y="175" fill="#cbd5e1" font-size="18" font-family="Arial">Result</text>
+  <text x="120" y="205" fill="#f8fafc" font-size="16" font-family="Arial">2026-05-14 10:00</text>
+  <text x="320" y="205" fill="#f8fafc" font-size="16" font-family="Arial">manager@local</text>
+  <text x="520" y="205" fill="#34d399" font-size="16" font-family="Arial">Allowed</text>
+</svg>
