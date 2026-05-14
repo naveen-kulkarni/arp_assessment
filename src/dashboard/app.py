@@ -111,6 +111,19 @@ def show_login():
                 st.rerun()
 
 
+def get_available_pages(role: str):
+    """Return dashboard pages available for a role."""
+    role = (role or "").lower()
+    pages = ["📈 Portfolio", "🤖 AI Agent"]
+
+    if role == "risk":
+        pages.extend(["💱 Trades", "🚨 Alerts"])
+    if role == "manager":
+        pages.append("📋 Audit Logs")
+
+    return pages
+
+
 # ============= DASHBOARD PAGES =============
 
 def page_portfolio():
@@ -135,6 +148,7 @@ def page_portfolio():
             col1, col2, col3 = st.columns(3)
             
             exposures = data.get("exposures", [])
+            
             if exposures:
                 total_value = sum(e["position_value"] for e in exposures)
                 top_asset = max(exposures, key=lambda x: x["position_value"])
@@ -145,10 +159,24 @@ def page_portfolio():
                     st.metric("Number of Holdings", len(exposures))
                 with col3:
                     st.metric("Top Position", f"{top_asset['symbol']} ({top_asset['exposure_percentage']:.1f}%)")
+            else:
+                total_value = data.get("total_portfolio_value", 0)
+                allocation = data.get("allocation_percentage", {})
+                
+                with col1:
+                    st.metric("Total Portfolio Value", f"${total_value:,.2f}")
+                with col2:
+                    st.metric("Number of Holdings", "Summary only")
+                with col3:
+                    st.metric("Access Level", "Summary")
+                
+                if allocation:
+                    st.write("**Asset allocation:**")
+                    allocation_text = ", ".join([f"{k}: {v}%" for k, v in allocation.items()])
+                    st.write(allocation_text)
             
             st.markdown("---")
             
-            # Exposure chart
             if exposures:
                 df = pd.DataFrame(exposures)
                 
@@ -170,11 +198,11 @@ def page_portfolio():
                 )
                 st.plotly_chart(fig, use_container_width=True)
             
-            # Pie chart of asset allocation
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                if exposures:
+            if exposures:
+                # Pie chart of asset allocation
+                col1, col2 = st.columns(2)
+                
+                with col1:
                     asset_classes = {}
                     for e in exposures:
                         asset_class = e['asset_class']
@@ -188,19 +216,21 @@ def page_portfolio():
                     )])
                     fig.update_layout(title="Asset Class Distribution", height=400)
                     st.plotly_chart(fig, use_container_width=True)
-            
-            with col2:
-                st.subheader("Holdings Details")
-                df_display = df[['symbol', 'quantity', 'current_price', 'position_value', 'exposure_percentage']].copy()
-                df_display.columns = ['Symbol', 'Quantity', 'Price', 'Value', 'Exposure %']
-                st.dataframe(df_display, use_container_width=True, hide_index=True)
-            
-            # Overexposed assets
-            overexposed = data.get("overexposed_assets", [])
-            if overexposed:
-                st.warning(f"⚠️ {len(overexposed)} overexposed assets (>30%)")
-                for asset in overexposed:
-                    st.write(f"- **{asset['symbol']}**: {asset['exposure_percentage']:.1f}%")
+                
+                with col2:
+                    st.subheader("Holdings Details")
+                    df_display = df[['symbol', 'quantity', 'current_price', 'position_value', 'exposure_percentage']].copy()
+                    df_display.columns = ['Symbol', 'Quantity', 'Price', 'Value', 'Exposure %']
+                    st.dataframe(df_display, use_container_width=True, hide_index=True)
+                
+                # Overexposed assets
+                overexposed = data.get("overexposed_assets", [])
+                if overexposed:
+                    st.warning(f"⚠️ {len(overexposed)} overexposed assets (>30%)")
+                    for asset in overexposed:
+                        st.write(f"- **{asset['symbol']}**: {asset['exposure_percentage']:.1f}%")
+            else:
+                st.info("Summary access only. Detailed holdings are not available for this role.")
         
         else:
             st.error(f"Failed to fetch portfolio data: {response.status_code}")
@@ -252,6 +282,8 @@ def page_trades():
             else:
                 st.info("No trades in the last 7 days")
         
+        elif response.status_code == 403:
+            st.error("You do not have permission to view trades")
         else:
             st.error(f"Failed to fetch trades: {response.status_code}")
     
@@ -301,6 +333,8 @@ def page_risk_alerts():
             else:
                 st.success("✅ No risk alerts")
         
+        elif response.status_code == 403:
+            st.error("You do not have permission to view risk alerts")
         else:
             st.error(f"Failed to fetch alerts: {response.status_code}")
     
@@ -453,6 +487,13 @@ def main():
     if not st.session_state.user:
         show_login()
     else:
+        available_pages = get_available_pages(st.session_state.role)
+        page = st.radio(
+            "Navigate",
+            available_pages,
+            label_visibility="collapsed",
+        )
+
         if page == "📈 Portfolio":
             page_portfolio()
         elif page == "💱 Trades":
@@ -462,10 +503,7 @@ def main():
         elif page == "🤖 AI Agent":
             page_ai_agent()
         elif page == "📋 Audit Logs":
-            if st.session_state.role == "manager":
-                page_audit_logs()
-            else:
-                st.error("You do not have permission to view audit logs")
+            page_audit_logs()
 
 
 if __name__ == "__main__":
