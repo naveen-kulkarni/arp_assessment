@@ -14,6 +14,19 @@ def client():
     
     with flask_app.test_client() as client:
         with flask_app.app_context():
+            # Clear database before each test
+            db = SessionLocal()
+            from sqlalchemy import text
+            # Drop and recreate tables
+            db.execute(text("DROP TABLE IF EXISTS audit_logs"))
+            db.execute(text("DROP TABLE IF EXISTS risk_rules"))
+            db.execute(text("DROP TABLE IF EXISTS market_prices"))
+            db.execute(text("DROP TABLE IF EXISTS trades"))
+            db.execute(text("DROP TABLE IF EXISTS portfolio_holdings"))
+            db.execute(text("DROP TABLE IF EXISTS users"))
+            db.commit()
+            db.close()
+            
             init_db()
             db = SessionLocal()
             generate_mock_data(db)

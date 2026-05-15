@@ -34,6 +34,7 @@ ROLE_PERMISSIONS: Dict[UserRole, Set[Permission]] = {
     },
     UserRole.RISK: {
         Permission.VIEW_PORTFOLIO,
+        Permission.VIEW_PORTFOLIO_SUMMARY,
         Permission.VIEW_TRADES,
         Permission.VIEW_HIGH_RISK_TRADES,
         Permission.VIEW_MARKET_DATA,
