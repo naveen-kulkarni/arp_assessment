@@ -1,0 +1,520 @@
+
+[     UTC     ] Logs for naveen-kulkarni-arp-assessment-srcdashboardapp-jajj6h.streamlit.app/
+────────────────────────────────────────────────────────────────────────────────────────
+[17:32:16] 🚀 Starting up repository: 'arp_assessment', branch: 'main', main module: 'src/dashboard/app.py'
+[17:32:16] 🐙 Cloning repository...
+[17:32:16] 🐙 Cloning into '/mount/src/arp_assessment'...
+
+[17:32:16] 🐙 Cloned repository!
+[17:32:16] 🐙 Pulling code changes from Github...
+[17:32:17] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.14.4 environment at /home/adminuser/venv
+Resolved 90 packages in 1.04s
+  × Failed to download and build `pyyaml==6.0`
+  ╰─▶ Build backend failed to determine requirements with `build_wheel()`
+      (exit status: 1)
+
+      [stdout]
+      running egg_info
+      writing lib/PyYAML.egg-info/PKG-INFO
+      writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+      writing top-level names to lib/PyYAML.egg-info/top_level.txt
+
+      [stderr]
+      /home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/wheel/bdist_wheel.py:4:
+      FutureWarning: The 'wheel' package is no longer the canonical location
+      of the 'bdist_wheel' command, and will be removed in a future release.
+      Please update to setuptools v70.1 or later which contains an integrated
+      version of this command.
+        warn(
+      /home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/dist.py:765:
+      SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+
+      
+      ********************************************************************************
+              Please consider removing the following classifiers in favor of a
+      SPDX license expression:
+
+              License :: OSI Approved :: MIT License
+
+              See
+      https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license
+      for details.
+      
+      ********************************************************************************
+
+      !!
+        self._finalize_license_expression()
+      Traceback (most recent call last):
+        File "<string>", line 14, in <module>
+          requires = get_requires_for_build({})
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/build_meta.py",
+      line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/build_meta.py",
+      line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/build_meta.py",
+      line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 288, in <module>
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/__init__.py",
+      line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                 ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/_distutils/core.py",
+      line 186, in setup
+          return run_commands(dist)
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/_distutils/core.py",
+      line 202, in run_commands
+          dist.run_commands()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/_distutils/dist.py",
+      line 1000, in run_commands
+          self.run_command(cmd)
+          ~~~~~~~~~~~~~~~~^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/dist.py",
+      line 1107, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/_distutils/dist.py",
+      line 1019, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 312, in run
+          self.find_sources()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 320, in find_sources
+          mm.run()
+          ~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 542, in run
+          self.add_defaults()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 580, in add_defaults
+          sdist.add_defaults(self)
+          ~~~~~~~~~~~~~~~~~~^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/command/sdist.py",
+      line 110, in add_defaults
+          super().add_defaults()
+          ~~~~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/_distutils/command/sdist.py",
+      line 245, in add_defaults
+          self._add_defaults_ext()
+          ~~~~~~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmp5sXaqs/lib/python3.14/site-packages/setuptools/_distutils/command/sdist.py",
+      line 330, in _add_defaults_ext
+          self.filelist.extend(build_ext.get_source_files())
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+        File "<string>", line 204, in get_source_files
+      AttributeError: 'build_ext' object has no attribute 'cython_sources'
+
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.14.4 environment at /home/adminuser/venv
+Resolved 4 packages in 35ms
+Prepared 1 package in 32ms
+Installed 4 packages in 22ms
+ + markdown-it-py==[2026-05-15 17:32:22.189321] 4.2.0
+ + mdurl==0.1.2
+ + pygments==2.20.0
+ + rich==15.0.0
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting Flask==2.3.3 (from -r /mount/src/arp_assessment/requirements.txt (line 2))
+  Downloading flask-2.3.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting Flask-CORS==4.0.0 (from -r /mount/src/arp_assessment/requirements.txt (line 3))
+  Downloading Flask_Cors-4.0.0-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting Flask-JWT-Extended==4.5.2 (from -r /mount/src/arp_assessment/requirements.txt (line 4))
+  Downloading Flask_JWT_Extended-4.5.2-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting Werkzeug==2.3.7 (from -r /mount/src/arp_assessment/requirements.txt (line 5))
+  Downloading werkzeug-2.3.7-py3-none-any.whl.metadata (4.1 kB)
+Collecting SQLAlchemy==2.0.20 (from -r /mount/src/arp_assessment/requirements.txt (line 8))
+  Downloading SQLAlchemy-2.0.20-py3-none-any.whl.metadata (9.4 kB)
+Collecting alembic==1.11.3 (from -r /mount/src/arp_assessment/requirements.txt (line 9))
+  Downloading alembic-1.11.3-py3-none-any.whl.metadata (7.2 kB)
+Collecting pandas==2.0.3 (from -r /mount/src/arp_assessment/requirements.txt (line 12))
+  Downloading pandas-2.0.3.tar.gz (5.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 93.3 MB/s eta 0:00:00[2026-05-15 17:32:24.958811] 
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [23 lines of output]
+      Traceback (most recent call last):
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+          ~~~~^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-r92bmyh3/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-r92bmyh3/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-r92bmyh3/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-r92bmyh3/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 19, in <module>
+      ModuleNotFoundError: No module named 'pkg_resources'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 24.0 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 12.8 MB/s eta 0:00:00[2026-05-15 17:32:35.841852] 
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 kB 326.3 MB/s eta 0:00:00[2026-05-15 17:32:35.855255] 
+Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 90.9 MB/s eta 0:00:00[2026-05-15 17:32:35.891125] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.20.0
+    Uninstalling Pygments-2.20.0:
+      Successfully uninstalled Pygments-2.20.0
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.2.0
+    Uninstalling markdown-it-py-4.2.0:
+      Successfully uninstalled markdown-it-py-4.2.0
+  Attempting uninstall: rich
+    Found existing installation: rich 15.0.0
+    Uninstalling rich-15.0.0:
+      Successfully uninstalled rich-15.0.0
+Successfully installed markdown-it-py-4.2.0 mdurl-0.1.2 pygments-2.20.0 rich-15.0.0
+
+[notice] A new release of pip is available: 24.0 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[17:32:38] ❗️ installer returned a non-zero exit code
+[17:32:38] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
+[17:33:47] 🖥 Provisioning machine...
+[17:33:50] 🚀 Starting up repository: 'arp_assessment', branch: 'main', main module: 'src/dashboard/app.py'
+[17:33:50] 🐙 Cloning repository...
+[17:33:50] 🐙 Cloning into '/mount/src/arp_assessment'...
+
+[17:33:50] 🐙 Cloned repository!
+[17:33:50] 🐙 Pulling code changes from Github...
+[17:33:51] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.14.4 environment at /home/adminuser/venv
+Resolved 90 packages in 1.06s
+[17:33:52] 🎛 Preparing system...
+[17:33:52] ⛓ Spinning up manager process...
+  × Failed to download and build `pyyaml==6.0`
+  ╰─▶ Build backend failed to determine requirements with `build_wheel()`
+      (exit status: 1)
+
+      [stdout]
+      running egg_info
+      writing lib/PyYAML.egg-info/PKG-INFO
+      writing dependency_links to lib/PyYAML.egg-info/dependency_links.txt
+      writing top-level names to lib/PyYAML.egg-info/top_level.txt
+
+      [stderr]
+      /home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/wheel/bdist_wheel.py:4:
+      FutureWarning: The 'wheel' package is no longer the canonical location
+      of the 'bdist_wheel' command, and will be removed in a future release.
+      Please update to setuptools v70.1 or later which contains an integrated
+      version of this command.
+        warn(
+      /home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/dist.py:765:
+      SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+
+      
+      ********************************************************************************
+              Please consider removing the following classifiers in favor of a
+      SPDX license expression:
+
+              License :: OSI Approved :: MIT License
+
+              See
+      https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license
+      for details.
+      
+      ********************************************************************************
+
+      !!
+        self._finalize_license_expression()
+      Traceback (most recent call last):
+        File "<string>", line 14, in <module>
+          requires = get_requires_for_build({})
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/build_meta.py",
+      line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/build_meta.py",
+      line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/build_meta.py",
+      line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 288, in <module>
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/__init__.py",
+      line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                 ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/_distutils/core.py",
+      line 186, in setup
+          return run_commands(dist)
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/_distutils/core.py",
+      line 202, in run_commands
+          dist.run_commands()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/_distutils/dist.py",
+      line 1000, in run_commands
+          self.run_command(cmd)
+          ~~~~~~~~~~~~~~~~^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/dist.py",
+      line 1107, in run_command
+          super().run_command(command)
+          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/_distutils/dist.py",
+      line 1019, in run_command
+          cmd_obj.run()
+          ~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 312, in run
+          self.find_sources()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 320, in find_sources
+          mm.run()
+          ~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 542, in run
+          self.add_defaults()
+          ~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/command/egg_info.py",
+      line 580, in add_defaults
+          sdist.add_defaults(self)
+          ~~~~~~~~~~~~~~~~~~^^^^^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/command/sdist.py",
+      line 110, in add_defaults
+          super().add_defaults()
+          ~~~~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/_distutils/command/sdist.py",
+      line 245, in add_defaults
+          self._add_defaults_ext()
+          ~~~~~~~~~~~~~~~~~~~~~~^^
+        File
+      "/home/adminuser/.cache/uv/builds-v0/.tmpaYJXiX/lib/python3.14/site-packages/setuptools/_distutils/command/sdist.py",
+      line 330, in _add_defaults_ext
+          self.filelist.extend(build_ext.get_source_files())
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+        File "<string>", line 204, in get_source_files
+      AttributeError: 'build_ext' object has no attribute 'cython_sources'
+
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.14.4 environment at /home/adminuser/venv
+Resolved 4 packages in 41ms
+Prepared 1 package in 40ms
+Installed 4 packages in 21ms
+ + markdown-it-py==4.2.0[2026-05-15 17:33:55.677668] 
+ + mdurl==0.1.2
+ + pygments==2.20.0
+ + rich==15.0.0
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting Flask==2.3.3 (from -r /mount/src/arp_assessment/requirements.txt (line 2))
+  Downloading flask-2.3.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting Flask-CORS==4.0.0 (from -r /mount/src/arp_assessment/requirements.txt (line 3))
+  Downloading Flask_Cors-4.0.0-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting Flask-JWT-Extended==4.5.2 (from -r /mount/src/arp_assessment/requirements.txt (line 4))
+  Downloading Flask_JWT_Extended-4.5.2-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting Werkzeug==2.3.7 (from -r /mount/src/arp_assessment/requirements.txt (line 5))
+  Downloading werkzeug-2.3.7-py3-none-any.whl.metadata (4.1 kB)
+Collecting SQLAlchemy==2.0.20 (from -r /mount/src/arp_assessment/requirements.txt (line 8))
+  Downloading SQLAlchemy-2.0.20-py3-none-any.whl.metadata (9.4 kB)
+Collecting alembic==1.11.3 (from -r /mount/src/arp_assessment/requirements.txt (line 9))
+  Downloading alembic-1.11.3-py3-none-any.whl.metadata (7.2 kB)
+Collecting pandas==2.0.3 (from -r /mount/src/arp_assessment/requirements.txt (line 12))
+  Downloading pandas-2.0.3.tar.gz (5.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 91.6 MB/s eta 0:00:00[2026-05-15 17:33:57.553390] 
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [23 lines of output]
+      Traceback (most recent call last):
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+          ~~~~^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-0kvxcukz/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-0kvxcukz/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-0kvxcukz/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-0kvxcukz/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 19, in <module>
+      ModuleNotFoundError: No module named 'pkg_resources'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 24.0 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 13.9 MB/s eta 0:00:00[2026-05-15 17:34:07.244611] 
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 kB 299.3 MB/s eta 0:00:00[2026-05-15 17:34:07.258220] 
+Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 78.6 MB/s eta 0:00:00[2026-05-15 17:34:07.286753] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.20.0
+    Uninstalling Pygments-2.20.0:
+      Successfully uninstalled Pygments-2.20.0
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.2.0
+    Uninstalling markdown-it-py-4.2.0:
+      Successfully uninstalled markdown-it-py-4.2.0
+  Attempting uninstall: rich
+    Found existing installation: rich 15.0.0
+    Uninstalling rich-15.0.0:
+      Successfully uninstalled rich-15.0.0
+Successfully installed markdown-it-py-4.2.0 mdurl-0.1.2 pygments-2.20.0 rich-15.0.0
+
+[notice] A new release of pip is available: 24.0 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[17:34:09] ❗️ installer returned a non-zero exit code
+[17:34:09] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
