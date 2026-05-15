@@ -177,11 +177,17 @@ def get_portfolio():
         if not user:
             return jsonify({"error": "User not found"}), 404
         
-        from src.backend.tools import ToolContext, get_portfolio_summary
+        from src.backend.tools import ToolContext, get_portfolio_summary, get_asset_exposure
         context = ToolContext(db, user)
         
-        # Always try to get portfolio summary for authenticated users
+        # Always return portfolio summary for authenticated users
         result = get_portfolio_summary(context)
+        
+        # Add asset exposure details for roles with portfolio access
+        if context.check_access("get_asset_exposure"):
+            exposure_data = get_asset_exposure(context)
+            result.update(exposure_data)
+        
         return jsonify(result), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
