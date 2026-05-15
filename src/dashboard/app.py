@@ -452,13 +452,6 @@ def main():
             st.write(f"**Role:** {st.session_state.role}")
             st.markdown("---")
             
-            # Navigation
-            page = st.radio(
-                "Navigate",
-                ["📈 Portfolio", "💱 Trades", "🚨 Alerts", "🤖 AI Agent", "📋 Audit Logs"],
-                label_visibility="collapsed",
-            )
-            
             st.markdown("---")
             
             if st.button("🚪 Logout"):
