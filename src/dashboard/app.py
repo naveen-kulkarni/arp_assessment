@@ -108,7 +108,7 @@ def show_login():
         if st.button("Login", key="login_btn", use_container_width=True):
             if login_user(selected_user):
                 st.success(f"Logged in as {selected_user}")
-                st.rerun()
+                st.experimental_rerun()
 
 
 def get_available_pages(role: str):
@@ -456,7 +456,7 @@ def main():
             
             if st.button("🚪 Logout"):
                 logout_user()
-                st.rerun()
+                st.experimental_rerun()
         
         else:
             st.info("👈 Please login to continue")
