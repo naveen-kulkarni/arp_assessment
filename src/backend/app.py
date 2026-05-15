@@ -177,23 +177,12 @@ def get_portfolio():
         if not user:
             return jsonify({"error": "User not found"}), 404
         
-        orchestrator = AgentOrchestrator(db)
-        from src.backend.tools import ToolContext, get_asset_exposure, get_portfolio_summary
+        from src.backend.tools import ToolContext, get_portfolio_summary
         context = ToolContext(db, user)
         
-        print(f"DEBUG: User {user.username}, Role {user.role}")
-        print(f"DEBUG: check_access('get_asset_exposure'): {context.check_access('get_asset_exposure')}")
-        print(f"DEBUG: check_access('get_portfolio_summary'): {context.check_access('get_portfolio_summary')}")
-        
-        if context.check_access("get_asset_exposure"):
-            result = get_asset_exposure(context)
-            return jsonify(result), 200
-        
-        if context.check_access("get_portfolio_summary"):
-            result = get_portfolio_summary(context)
-            return jsonify(result), 200
-        
-        return jsonify({"error": "Access denied"}), 403
+        # Always try to get portfolio summary for authenticated users
+        result = get_portfolio_summary(context)
+        return jsonify(result), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     finally:

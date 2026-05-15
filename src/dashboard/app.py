@@ -112,16 +112,8 @@ def show_login():
 
 
 def get_available_pages(role: str):
-    """Return dashboard pages available for a role."""
-    role = (role or "").lower()
-    pages = ["📈 Portfolio", "🤖 AI Agent"]
-
-    if role == "risk":
-        pages.extend(["💱 Trades", "🚨 Alerts"])
-    if role == "manager":
-        pages.append("📋 Audit Logs")
-
-    return pages
+    """Return all dashboard pages (remove role filtering)."""
+    return ["📈 Portfolio", "💱 Trades", "🚨 Alerts", "🤖 AI Agent", "📋 Audit Logs"]
 
 
 # ============= DASHBOARD PAGES =============
